@@ -1,0 +1,541 @@
+/* Инструкции ======================================================*/
+
+/*
+Шрифт из плагина в VS Code
+Жмем F1 (cmd shift p)
+Пишем Google Fonts
+Выбираем import
+Пишем имя шрифта
+Убираем лишнее
+Добавляем кавычки "" и запись:
+&display=swap  - сообщит браузеру сначала использовать fallback, то есть системный шрифт (sans-serif например), а затем заменить его на реальный шрифт после его загрузки. Так можно избежать задержки в загрузке контента, когда шрифт ещё не прогрузился и улучшить производительность.
+&subset=cyrillic-ext - для кирилицы
+&display=swap&subset=cyrillic-ext - для двух параметоров одновременно
+
+*/
+/* Подключаем шрифты ======================================================*/
+
+/* google */
+/* @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap"); */
+/* plugin google*/
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display:regular,500,600,700,800,900,italic,500italic,600italic,700italic,800italic,900italic&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lato:100,100italic,300,300italic,regular,italic,700,700italic,900,900italic&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lora:regular,500,600,700,italic,500italic,600italic,700italic&display=swap");
+/* local */
+
+
+
+
+
+
+/* Стили обнуления ========================================================*/
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+
+   border: 0;
+}
+
+li {
+   list-style: none;
+}
+
+a,
+a:visited {
+   color: inherit;
+   text-decoration: none;
+}
+
+a:hover {
+   text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   font-weight: inherit;
+   font-size: inherit;
+}
+
+img {
+   max-width: 100%;
+
+   vertical-align: top; /* убирает фантомные отступы у картинки*/
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+   -webkit-appearance: none;
+      -moz-appearance: none;
+           appearance: none;
+}
+
+body {
+   line-height: 1;
+   font-family: "Lato", sans-serif;
+   color: rgb(2, 255, 255);
+   /* background-color: rgb(160, 160, 160); */
+
+   background-color: #ffffff;
+
+
+   /* font-size: 16px; можно не указывать, 16px значение по умолчанию */
+}
+
+button {
+   /* background-color: transparent; */
+   cursor: pointer;
+}
+
+input,
+button,
+textarea {
+   font-family: inherit;
+}
+/* Основные стили ================================================================*/
+.container {
+   max-width: 1130px;
+   margin: 0 auto;
+   padding: 0 10px;
+}
+/* <header> ======================================================================*/
+
+.header__block {
+   margin: 60px 0 55px 0;
+
+   font-size: 0;
+}
+.header__logo {
+   display: inline-block;
+   margin: 0 184px 0 0;
+
+   font-weight: 700;
+   font-size: 24px;
+   line-height: 32px;
+   font-family: "Playfair Display", sans-serif;
+   color: rgba(16, 55, 92, 1);
+}
+.header__link-logo {
+}
+.header__menu {
+   display: inline-block;
+   margin: 0 80px 0 0;
+}
+.header__nav {
+}
+.header__list {
+   font-size: 0;
+}
+.header__item {
+   display: inline-block;
+   margin: 0 40px 0 0;
+
+   font-weight: 700;
+   font-size: 16px;
+   line-height: 28px;
+   color: #222831;
+}
+.header__item:last-child {
+   margin: 0 0 0 0;
+}
+.header__item:hover {
+   color: #245bad;
+}
+.header__link {
+}
+.header__entry-object {
+   display: inline-block;
+
+   font-weight: 700;
+   line-height: 19px;
+}
+.header__login {
+   display: inline-block;
+
+   font-size: 16px;
+   color: #ff5722;
+}
+.header__link-login {
+   display: inline-block;
+   padding: 12px 24px;
+}
+.header__link-login:hover {
+   color: #ffffff;
+
+   background-color: #ff5722;
+}
+.header__signup {
+   display: inline-block;
+
+   font-size: 16px;
+   color: #ffffff;
+
+   background-color: #ff5722;
+}
+.header__link-signup {
+   display: inline-block;
+   padding: 12px 24px;
+}
+.header__link-signup:hover {
+   color: #ff5722;
+
+   background-color: #ffffff;
+}
+
+/* </header> ======================================================================*/
+/* <main>==========================================================================*/
+
+.main__introducing {
+   margin: 0 0 40px 0;
+}
+.introducing {
+}
+.introducing__intro {
+   margin: 0 0 8px 0;
+}
+.intro {
+   position: relative;
+
+   display: inline-block;
+
+   font-weight: 500;
+   font-size: 20px;
+   line-height: 30px;
+   color: #222831;
+}
+.intro::after {
+   content: "";
+   position: absolute;
+   top: 17px;
+   left: calc(100% + 15px);
+
+   width: 73px;
+   height: 2px;
+
+   background-color: #222831;
+}
+.intro__name {
+}
+.introducing__content {
+   font-size: 0;
+}
+.introducing__title {
+   display: inline-block;
+   max-width: 667px;
+   margin: 0 60px 0 0;
+
+   font-weight: bold;
+   font-size: 52px;
+   line-height: 67px;
+   font-family: Lora;
+   color: #10375c;
+   font-style: normal;
+}
+.introducing__title--color {
+   color: #dd2c00;
+}
+.introducing__text {
+   display: inline-block;
+   max-width: 382px;
+
+   font-weight: 500;
+   font-size: 20px;
+   line-height: 30px;
+   vertical-align: top;
+   /* or 150% */
+   color: #6a6a6a;
+}
+
+
+
+.main__advantages {
+   margin: 0 0 112px 0;
+
+   font-size: 0;
+}
+.advantages {
+}
+.advantages__statistic {
+   display: inline-block;
+   margin: 0 70px 0 0;
+}
+.advantages__list {
+   max-width: 500px;
+
+   font-size: 0;
+}
+.advantages__item {
+   display: inline-block;
+   width: 215px;
+   margin: 0 70px 65px 0;
+   padding: 0 0 0 64px;
+
+   background: url("../img/advantages//1.svg") 0 5px / 32px 32px no-repeat;
+}
+.advantages__item:nth-child(2) {
+   background: url("../img/advantages//2.svg") 0 5px / 32px 32px no-repeat;
+}
+.advantages__item:nth-child(3) {
+   background: url("../img/advantages//3.svg") 0 5px / 32px 32px no-repeat;
+}
+.advantages__item:nth-child(4) {
+   background: url("../img/advantages//4.svg") 0 5px / 32px 32px no-repeat;
+}
+.advantages__item:nth-child(5) {
+   background: url("../img/advantages//5.svg") 0 5px / 32px 32px no-repeat;
+}
+.advantages__item:nth-child(6) {
+   background: url("../img/advantages//6.svg") 0 5px / 32px 32px no-repeat;
+}
+.advantages__item:nth-child(even) {
+   margin-right: 0;
+}
+.advantages__quantity {
+   margin: 0 0 8px 0;
+
+   font-size: 32px;
+   line-height: 41px;
+   font-family: Lora;
+   color: #10375c;
+}
+
+.advantages__description {
+   font-size: 16px;
+   line-height: 26px;
+   color: #9a9a9a;
+}
+.advantages__content {
+   display: inline-block;
+   max-width: 540px;
+   padding: 54px;
+
+   background-color: #10375c;
+}
+.advantages__intro {
+   margin: 0 0 8px 0;
+}
+.intro {
+}
+.intro--white {
+   color: #ffffff;
+}
+.intro--white::after {
+   background-color: #ffffff;
+}
+.intro__name {
+}
+.advantages__title {
+   margin: 0 0 24px 0;
+}
+.title {
+   font-weight: 700;
+   font-size: 40px;
+   line-height: 51px;
+   font-family: Lora;
+   color: #ffffff;
+}
+.advantages__text {
+   font-weight: 500;
+   font-size: 20px;
+   line-height: 30px;
+   color: #ffffff;
+}
+
+
+
+.main__partners {
+   margin: 0 0 112px 0;
+
+   text-align: center;
+}
+.partners {
+}
+.partners__block {
+}
+.partners__title {
+   margin: 0 0 24px 0;
+
+   color: #0d2c4a;
+}
+.title {
+}
+.partners__subtitle {
+   margin: 0 0 56px 0;
+
+   font-weight: 500;
+   font-size: 18px;
+   line-height: 28px;
+   color: #9a9a9a;
+}
+.partners__logo {
+   margin: 0 -33px;
+
+   font-size: 0;
+}
+.partners__list {
+}
+.partners__item {
+   display: inline-block;
+   max-width: 16.666%;
+   margin: 0 60px 0 0;
+}
+.partners__item:last-child {
+   margin-right: 0;
+}
+
+
+
+.main__events {
+   padding: 60px 0 76px;
+
+   background-color: #f8f8f8;
+}
+.events {
+}
+.events__block {
+}
+.events__title {
+   position: relative;
+
+   margin: 0 0 56px 0;
+
+   color: #10375c;
+}
+.title {
+}
+.events__link {
+   position: absolute;
+   right: 0;
+   bottom: 0;
+}
+.link {
+   font-weight: 400;
+   font-size: 16px;
+   line-height: 26px;
+   font-family: Lato;
+   color: #ff5722;
+}
+.link a {
+   display: inline-block;
+   padding: 0 20px 0 0;
+
+   background: url("../img/events/arrow.svg") right / 16px 16px  no-repeat;
+}
+.link:hover {
+   opacity: 0.7;
+}
+.events__content {
+}
+.events__list {
+   font-size: 0;
+}
+.events__item {
+   display: inline-block;
+   margin: 0 30px 30px 0;
+
+   font-size: 0;
+   vertical-align: top;
+}
+.events__item:nth-child(2) {
+   margin-right: 0;
+}
+.events__item:last-child {
+   margin-right: 0;
+   margin-bottom: 0;
+}
+.events__item--big {
+   font-size: 0;
+}
+.events__img {
+   display: inline-block;
+   max-width: 350px;
+}
+.events__big-content {
+   display: inline-block;
+   max-width: 380px;
+   padding: 32px;
+
+   vertical-align: top;
+
+   background-color: #ffffff;
+}
+.events__title--big {
+   margin: 0 0 24px 0;
+
+   font-weight: 700;
+   font-size: 32px;
+   line-height: 41px;
+   font-family: Lora;
+   color: #222831;
+}
+.events__text {
+   margin: 0 0 16px 0;
+
+   font-size: 16px;
+   line-height: 26px;
+   color: #9a9a9a;
+}
+.events__author--big {
+}
+.author {
+}
+.author__img {
+   display: inline-block;
+   margin: 0 23px 0 0;
+
+   border-radius: 50%;
+}
+.author__info {
+   display: inline-block;
+
+   vertical-align: top;
+}
+.author__name {
+   font-weight: 500;
+   font-size: 18px;
+   line-height: 28px;
+   color: #10375c;
+}
+.author__position {
+   font-size: 16px;
+   line-height: 26px;
+   color: #9a9a9a;
+}
+.events__item--small {
+   max-width: 350px;
+}
+.events__inner {
+   padding: 16px;
+
+   background-color: #ffffff;
+}
+.events__caption {
+   margin: 0 0 2px 0;
+
+   font-weight: normal;
+   font-size: 22px;
+   line-height: 28px;
+   font-family: Lora;
+   color: #222831;
+   font-style: normal;
+}
+.events__author {
+   font-weight: 500;
+   font-size: 16px;
+   line-height: 26px;
+   color: #9a9a9a;
+}
+/* </main>=======================================================================*/
+/* <footer>======================================================================*/
+
+
+
+/* </footer>======================================================================*/
